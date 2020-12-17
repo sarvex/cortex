@@ -47,7 +47,7 @@ class PythonPredictor:
 
 #### Making predictions
 
-For convenience, we'll export our API's endpoint (yours will be different from mine):
+For convenience, we'll export our API's endpoint \(yours will be different from mine\):
 
 ```bash
 $ api_endpoint=http://a36473270de8b46e79a769850dd3372d-c67035afa37ef878.elb.us-west-2.amazonaws.com/mpg-estimator
@@ -61,7 +61,7 @@ $ curl "${api_endpoint}?version=1" -X POST -H "Content-Type: application/json" -
 {"prediction": 26.929889872154185, "model": {"version": "1"}}
 ```
 
-Then we'll make a prediction using the 2nd version of the model (since they are just duplicate models, it will only return the same result):
+Then we'll make a prediction using the 2nd version of the model \(since they are just duplicate models, it will only return the same result\):
 
 ```bash
 $ curl "${api_endpoint}?version=2" -X POST -H "Content-Type: application/json" -d @sample.json
@@ -122,7 +122,7 @@ class PythonPredictor:
 
 #### Making predictions
 
-For convenience, we'll export our API's endpoint (yours will be different from mine):
+For convenience, we'll export our API's endpoint \(yours will be different from mine\):
 
 ```bash
 $ api_endpoint=http://a36473270de8b46e79a769850dd3372d-c67035afa37ef878.elb.us-west-2.amazonaws.com/multi-model-text-analyzer
@@ -146,7 +146,7 @@ Machine learning is the study of algorithms and statistical models that computer
 
 ## TensorFlow Predictor
 
-For the TensorFlow Predictor, a multi-model API is configured by placing the list of models in the Predictor's `models` field (each model will specify its own unique name). The `predict()` method of the `tensorflow_client` object expects a second argument that represents the name of the model that will be used for inference.
+For the TensorFlow Predictor, a multi-model API is configured by placing the list of models in the Predictor's `models` field \(each model will specify its own unique name\). The `predict()` method of the `tensorflow_client` object expects a second argument that represents the name of the model that will be used for inference.
 
 ### `cortex.yaml`
 
@@ -195,7 +195,7 @@ class TensorFlowPredictor:
 
 ### Making predictions
 
-For convenience, we'll export our API's endpoint (yours will be different from mine):
+For convenience, we'll export our API's endpoint \(yours will be different from mine\):
 
 ```bash
 $ api_endpoint=http://a36473270de8b46e79a769850dd3372d-c67035afa37ef878.elb.us-west-2.amazonaws.com/multi-model-classifier
@@ -227,7 +227,7 @@ $ curl "${ENDPOINT}?model=inception" -X POST -H "Content-Type: application/json"
 
 ## ONNX Predictor
 
-For the ONNX Predictor, a multi-model API is configured by placing the list of models in the Predictor's `models` field (each model will specify its own unique name). The `predict()` method of the `onnx_client` object expects a second argument that represents the name of the model that will be used for inference.
+For the ONNX Predictor, a multi-model API is configured by placing the list of models in the Predictor's `models` field \(each model will specify its own unique name\). The `predict()` method of the `onnx_client` object expects a second argument that represents the name of the model that will be used for inference.
 
 ### `cortex.yaml`
 
@@ -272,12 +272,11 @@ class ONNXPredictor:
         predicted_label = postprocess(results)
 
         return {"label": predicted_label}
-
 ```
 
 ### Making predictions
 
-For convenience, we'll export our API's endpoint (yours will be different from mine):
+For convenience, we'll export our API's endpoint \(yours will be different from mine\):
 
 ```bash
 $ api_endpoint=http://a36473270de8b46e79a769850dd3372d-c67035afa37ef878.elb.us-west-2.amazonaws.com/multi-model-classifier
@@ -306,3 +305,4 @@ $ curl "${ENDPOINT}?model=shufflenet" -X POST -H "Content-Type: application/json
 
 {"label": "Egyptian_cat"}
 ```
+

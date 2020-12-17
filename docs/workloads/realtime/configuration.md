@@ -2,7 +2,6 @@
 
 ## Python Predictor
 
-<!-- CORTEX_VERSION_BRANCH_STABLE x2 -->
 ```yaml
 - name: <string>  # API name (required)
   kind: RealtimeAPI
@@ -56,7 +55,6 @@
 
 ## TensorFlow Predictor
 
-<!-- CORTEX_VERSION_BRANCH_STABLE x3 -->
 ```yaml
 - name: <string>  # API name (required)
   kind: RealtimeAPI
@@ -117,7 +115,6 @@
 
 ## ONNX Predictor
 
-<!-- CORTEX_VERSION_BRANCH_STABLE x2 -->
 ```yaml
 - name: <string>  # API name (required)
   kind: RealtimeAPI
@@ -168,3 +165,4 @@
     max_surge: <string | int>  # maximum number of replicas that can be scheduled above the desired number of replicas during an update; can be an absolute number, e.g. 5, or a percentage of desired replicas, e.g. 10% (default: 25%) (set to 0 to disable rolling updates)
     max_unavailable: <string | int>  # maximum number of replicas that can be unavailable during an update; can be an absolute number, e.g. 5, or a percentage of desired replicas, e.g. 10% (default: 25%)
 ```
+

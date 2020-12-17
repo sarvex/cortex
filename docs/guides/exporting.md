@@ -8,7 +8,7 @@ Here are examples for some common ML libraries:
 
 ### `torch.save()`
 
-The recommended approach is export your PyTorch model with [torch.save()](https://pytorch.org/docs/stable/torch.html?highlight=save#torch.save). Here is PyTorch's documentation on [saving and loading models](https://pytorch.org/tutorials/beginner/saving_loading_models.html). For example:
+The recommended approach is export your PyTorch model with [torch.save\(\)](https://pytorch.org/docs/stable/torch.html?highlight=save#torch.save). Here is PyTorch's documentation on [saving and loading models](https://pytorch.org/tutorials/beginner/saving_loading_models.html). For example:
 
 ```python
 torch.save(model.state_dict(), "weights.pth")
@@ -16,7 +16,7 @@ torch.save(model.state_dict(), "weights.pth")
 
 ### ONNX
 
-It may also be possible to export your PyTorch model into the ONNX format using [torch.onnx.export()](https://pytorch.org/docs/stable/onnx.html#torch.onnx.export). For example:
+It may also be possible to export your PyTorch model into the ONNX format using [torch.onnx.export\(\)](https://pytorch.org/docs/stable/onnx.html#torch.onnx.export). For example:
 
 ```python
 placeholder = torch.randn(1, 4)
@@ -39,7 +39,7 @@ onnx.save(model, 'my_model.onnx')
 
 ### `SavedModel`
 
-You may export your trained model into an export directory, or use a checkpoint directory containing the export directory (which is usually the case if you used `estimator.train_and_evaluate()`). The folder may be zipped if you desire.
+You may export your trained model into an export directory, or use a checkpoint directory containing the export directory \(which is usually the case if you used `estimator.train_and_evaluate()`\). The folder may be zipped if you desire.
 
 A TensorFlow `SavedModel` directory should have this structure:
 
@@ -138,7 +138,7 @@ pickle.dump(model, open("model.pkl", "wb"))
 
 ### `Booster.save_model()`
 
-XGBoost `Booster` models can also be exported using [`xgboost.Booster.save_model()`](https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.Booster.save_model). Auxiliary attributes of the Booster object (e.g. feature_names) will not be saved. To preserve all attributes, you can use `pickle` (see above).
+XGBoost `Booster` models can also be exported using [`xgboost.Booster.save_model()`](https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.Booster.save_model). Auxiliary attributes of the Booster object \(e.g. feature\_names\) will not be saved. To preserve all attributes, you can use `pickle` \(see above\).
 
 For example:
 
@@ -162,3 +162,4 @@ with open("gbtree.onnx", "wb") as f:
 ## Other ML Libraries
 
 Trained models should be exported by following the recommendations of the modeling framework you are using. `pickle` is commonly used, but some libraries have built-in functions for exporting models. It may also be possible to export your model to the ONNX format, e.g. using [onnxmltools](https://github.com/onnx/onnxmltools). As long as the exported model can be loaded and used to make predictions in Python, it will be supported by Cortex.
+

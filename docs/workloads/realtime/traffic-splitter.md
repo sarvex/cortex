@@ -4,7 +4,7 @@ The Traffic Splitter feature allows you to split traffic between multiple Realti
 
 You can deploy an Traffic Splitter to provide a single endpoint that can route a request randomly to one of the target Realtime APIs. Weights can be assigned to Realtime APIs to control the percentage of requests routed to each API.
 
-**Traffic Splitters are only supported on a Cortex cluster (in AWS).**
+**Traffic Splitters are only supported on a Cortex cluster \(in AWS\).**
 
 ## Traffic Splitter Configuration
 
@@ -71,3 +71,4 @@ deleted traffic-splitter
 ```
 
 Note that this will not delete the Realtime APIs targeted by the Traffic Splitter.
+

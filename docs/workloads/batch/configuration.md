@@ -1,8 +1,7 @@
-# Batch API configuration
+# API configuration
 
 ## Python Predictor
 
-<!-- CORTEX_VERSION_BRANCH_STABLE x2 -->
 ```yaml
 - name: <string>  # API name (required)
   kind: BatchAPI
@@ -25,7 +24,6 @@
 
 ## TensorFlow Predictor
 
-<!-- CORTEX_VERSION_BRANCH_STABLE x3 -->
 ```yaml
 - name: <string>  # API name (required)
   kind: BatchAPI
@@ -59,7 +57,6 @@
 
 ## ONNX Predictor
 
-<!-- CORTEX_VERSION_BRANCH_STABLE x2 -->
 ```yaml
 - name: <string>  # API name (required)
   kind: BatchAPI
@@ -84,3 +81,4 @@
     gpu: <int>  # GPU request per worker (default: 0)
     mem: <string>  # memory request per worker, e.g. 200Mi or 1Gi (default: Null)
 ```
+

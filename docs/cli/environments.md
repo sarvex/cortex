@@ -70,3 +70,4 @@ cortex env configure
 ```
 
 This will prompt for the necessary configuration. Note that the AWS credentials that you use here do not need any IAM permissions attached. If you will be running any `cortex cluster` commands specify the preferred AWS credentials using cli flags `--aws-key AWS_ACCESS_KEY_ID --aws-secret AWS_SECRET_ACCESS_KEY`.
+

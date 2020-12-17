@@ -1,4 +1,4 @@
-# Deploy a batch API
+# Batch API
 
 Deploy models as batch APIs that can orchestrate distributed batch inference jobs on large datasets.
 
@@ -154,3 +154,4 @@ Once the job is complete, you should be able to find the results of the batch jo
 ```bash
 $ cortex delete image-classifier --env aws
 ```
+

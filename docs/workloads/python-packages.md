@@ -1,8 +1,8 @@
-# Python/Conda packages
+# Python packages
 
 ## PyPI packages
 
-You can install your required PyPI packages and import them in your Python files using pip. Cortex looks for a `requirements.txt` file in the top level Cortex project directory (i.e. the directory which contains `cortex.yaml`):
+You can install your required PyPI packages and import them in your Python files using pip. Cortex looks for a `requirements.txt` file in the top level Cortex project directory \(i.e. the directory which contains `cortex.yaml`\):
 
 ```text
 ./my-classifier/
@@ -12,9 +12,9 @@ You can install your required PyPI packages and import them in your Python files
 └── requirements.txt
 ```
 
-If you want to use `conda` to install your python packages, see the [Conda section](#conda-packages) below.
+If you want to use `conda` to install your python packages, see the [Conda section](python-packages.md#conda-packages) below.
 
-Note that some packages are pre-installed by default (see "pre-installed packages" for your Predictor type in the Realtime API Predictor documentation and Batch API Predictor documentation).
+Note that some packages are pre-installed by default \(see "pre-installed packages" for your Predictor type in the Realtime API Predictor documentation and Batch API Predictor documentation\).
 
 ## Private PyPI packages
 
@@ -35,7 +35,7 @@ You may now add packages to `requirements.txt` which are found in the private in
 
 ## GitHub packages
 
-You can also install public/private packages from git registries (such as GitHub) by adding them to `requirements.txt`. Here's an example for GitHub:
+You can also install public/private packages from git registries \(such as GitHub\) by adding them to `requirements.txt`. Here's an example for GitHub:
 
 ```text
 # requirements.txt
@@ -65,6 +65,7 @@ Python packages can also be installed by providing a `setup.py` that describes y
 ```
 
 In this case, `requirements.txt` will have this form:
+
 ```text
 # requirements.txt
 
@@ -73,7 +74,7 @@ In this case, `requirements.txt` will have this form:
 
 ## Conda packages
 
-Cortex supports installing Conda packages. We recommend only using Conda when your required packages are not available in PyPI. Cortex looks for a `conda-packages.txt` file in the top level Cortex project directory (i.e. the directory which contains `cortex.yaml`):
+Cortex supports installing Conda packages. We recommend only using Conda when your required packages are not available in PyPI. Cortex looks for a `conda-packages.txt` file in the top level Cortex project directory \(i.e. the directory which contains `cortex.yaml`\):
 
 ```text
 ./my-classifier/
@@ -86,6 +87,7 @@ Cortex supports installing Conda packages. We recommend only using Conda when yo
 The `conda-packages.txt` file follows the format of `conda list --export`. Each line of `conda-packages.txt` should follow this pattern: `[channel::]package[=version[=buildid]]`.
 
 Here's an example of `conda-packages.txt`:
+
 ```text
 conda-forge::rdkit
 conda-forge::pygpu
@@ -96,3 +98,4 @@ In situations where both `requirements.txt` and `conda-packages.txt` are provide
 The current version of Python is `3.6.9`. Updating Python to a different version is possible with Conda, but there are no guarantees that Cortex's web server will continue functioning correctly. If there's a change in Python's version, the necessary core packages for the web server will be reinstalled. If you are using a custom base image, any other Python packages that are built in to the image won't be accessible at runtime.
 
 Check the [best practices](https://www.anaconda.com/using-pip-in-a-conda-environment/) on using `pip` inside `conda`.
+

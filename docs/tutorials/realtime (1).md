@@ -1,4 +1,4 @@
-# Get started
+# Realtime API
 
 Deploy models as realtime APIs that can respond to prediction requests on demand.
 

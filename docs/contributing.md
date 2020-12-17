@@ -64,9 +64,9 @@ curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/d
 sudo mv /tmp/eksctl /usr/local/bin
 ```
 
-### aws-cli (v1)
+### aws-cli \(v1\)
 
-Follow [these instructions](https://github.com/aws/aws-cli#installation) to install aws-cli (v1).
+Follow [these instructions](https://github.com/aws/aws-cli#installation) to install aws-cli \(v1\).
 
 E.g. to install it globally, run:
 
@@ -76,7 +76,7 @@ sudo python3 -m pip install awscli
 aws configure
 ```
 
-### gcloud (v1)
+### gcloud \(v1\)
 
 Follow [these instructions](https://cloud.google.com/sdk/docs/install#deb) to install gcloud.
 
@@ -124,7 +124,7 @@ Run the linter:
 make lint
 ```
 
-We use `gofmt` for formatting Go files, `black` for Python files (line length = 100), and the VS Code [yaml extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) for YAML files. It is recommended to enable these in your code editor, but you can also run the Go and Python formatters from the terminal:
+We use `gofmt` for formatting Go files, `black` for Python files \(line length = 100\), and the VS Code [yaml extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) for YAML files. It is recommended to enable these in your code editor, but you can also run the Go and Python formatters from the terminal:
 
 ```bash
 make format
@@ -158,7 +158,7 @@ Create the ECR registries:
 make registry-create-aws
 ```
 
-Create `dev/config/cluster-aws.yaml`. Paste the following config, and update `cortex_region` and all registry URLs (replace `XXXXXXXX` with your AWS account ID, and update the region):
+Create `dev/config/cluster-aws.yaml`. Paste the following config, and update `cortex_region` and all registry URLs \(replace `XXXXXXXX` with your AWS account ID, and update the region\):
 
 ```yaml
 # dev/config/cluster-aws.yaml
@@ -187,7 +187,7 @@ image_istio_pilot: XXXXXXXX.dkr.ecr.us-west-2.amazonaws.com/cortexlabs/istio-pil
 
 ### Building
 
-Add this to your bash profile (e.g. `~/.bash_profile`, `~/.profile` or `~/.bashrc`), replacing the image registry URL accordingly:
+Add this to your bash profile \(e.g. `~/.bash_profile`, `~/.profile` or `~/.bashrc`\), replacing the image registry URL accordingly:
 
 ```bash
 export CORTEX_DEV_DEFAULT_PREDICTOR_IMAGE_REGISTRY_AWS="XXXXXXXX.dkr.ecr.us-west-2.amazonaws.com/cortexlabs"  # set the default image for APIs
@@ -220,12 +220,12 @@ make images-all-aws
 
 Here is the typical full dev workflow which covers most cases:
 
-1. `make cluster-up-aws` (creates a cluster using `dev/config/cluster-aws.yaml`)
-2. `make devstart-aws` (deletes the in-cluster operator, builds the CLI, and starts the operator locally; file changes will trigger the CLI and operator to re-build)
+1. `make cluster-up-aws` \(creates a cluster using `dev/config/cluster-aws.yaml`\)
+2. `make devstart-aws` \(deletes the in-cluster operator, builds the CLI, and starts the operator locally; file changes will trigger the CLI and operator to re-build\)
 3. Make your changes
-4. `make images-dev-aws` (only necessary if API images or the manager are modified)
-5. Test your changes e.g. via `cortex deploy` (and repeat steps 3 and 4 as necessary)
-6. `make cluster-down-aws` (deletes your cluster)
+4. `make images-dev-aws` \(only necessary if API images or the manager are modified\)
+5. Test your changes e.g. via `cortex deploy` \(and repeat steps 3 and 4 as necessary\)
+6. `make cluster-down-aws` \(deletes your cluster\)
 
 If you want to switch back to the in-cluster operator:
 
@@ -234,10 +234,10 @@ If you want to switch back to the in-cluster operator:
 
 If you only want to test Cortex's local environment, here is the common workflow:
 
-1. `make cli-watch` (builds the CLI and re-builds it when files are changed)
+1. `make cli-watch` \(builds the CLI and re-builds it when files are changed\)
 2. Make your changes
-3. `make images-dev-local` (only necessary if API images or the manager are modified)
-4. Test your changes e.g. via `cortex deploy` (and repeat steps 2 and 3 as necessary)
+3. `make images-dev-local` \(only necessary if API images or the manager are modified\)
+4. Test your changes e.g. via `cortex deploy` \(and repeat steps 2 and 3 as necessary\)
 
 ### Dev workflow optimizations
 
@@ -245,8 +245,9 @@ If you are only modifying the CLI, `make cli-watch` will build the CLI and re-bu
 
 If you are only modifying the operator, `make operator-local-aws` will build and start the operator locally, and build/restart it when files are changed.
 
-If you are modifying code in the API images (i.e. any of the Python serving code), `make images-dev-aws` may build more images than you need during testing. For example, if you are only testing using the `python-predictor-cpu` image, you can run `./dev/registry.sh update-single python-predictor-cpu --provider aws` (or use `--provider local` if testing locally).
+If you are modifying code in the API images \(i.e. any of the Python serving code\), `make images-dev-aws` may build more images than you need during testing. For example, if you are only testing using the `python-predictor-cpu` image, you can run `./dev/registry.sh update-single python-predictor-cpu --provider aws` \(or use `--provider local` if testing locally\).
 
 See `Makefile` for additional dev commands.
 
 Feel free to [chat with us](https://gitter.im/cortexlabs/cortex) if you have any questions.
+

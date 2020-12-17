@@ -20,9 +20,8 @@ Also, take note of your AWS account ID. The account ID can be found in the _My A
 
 ## Step 4
 
-You can use the script below to push the Cortex images to your ECR registry. Make sure to update the `ecr_region`, `aws_account_id`, and `cortex_version` variables at the top of the file. Copy-paste the contents into a new file (e.g. `ecr.sh`), and then run `chmod +x ecr.sh`, followed by `./ecr.sh`. It is recommended to run this from an EC2 instance in the same region as your ECR repository, since it will be much faster.
+You can use the script below to push the Cortex images to your ECR registry. Make sure to update the `ecr_region`, `aws_account_id`, and `cortex_version` variables at the top of the file. Copy-paste the contents into a new file \(e.g. `ecr.sh`\), and then run `chmod +x ecr.sh`, followed by `./ecr.sh`. It is recommended to run this from an EC2 instance in the same region as your ECR repository, since it will be much faster.
 
-<!-- CORTEX_VERSION_README -->
 ```bash
 #!/bin/bash
 set -euo pipefail
@@ -127,14 +126,15 @@ done
 echo "-----------------------------------------------"
 ```
 
-The first list of images that were printed (the cluster images) can be directly copy-pasted in your cluster configuration file before spinning up your cluster.
+The first list of images that were printed \(the cluster images\) can be directly copy-pasted in your cluster configuration file before spinning up your cluster.
 
-The second list of images that were printed (the API images) can be used in your API configuration files. The image paths are specified in `predictor.image` (and `predictor.tensorflow_serving_image` for APIs with `kind: tensorflow`). Be advised that by default, the public images offered by Cortex are used for your predictors, so you will need to specify your ECR image paths for all of your APIs.
+The second list of images that were printed \(the API images\) can be used in your API configuration files. The image paths are specified in `predictor.image` \(and `predictor.tensorflow_serving_image` for APIs with `kind: tensorflow`\). Be advised that by default, the public images offered by Cortex are used for your predictors, so you will need to specify your ECR image paths for all of your APIs.
 
 ## Step 5
 
-Spin up your Cortex cluster using your updated cluster configuration file (e.g. `cortex cluster up --config cluster.yaml`).
+Spin up your Cortex cluster using your updated cluster configuration file \(e.g. `cortex cluster up --config cluster.yaml`\).
 
 ## Cleanup
 
-You can delete your ECR images from the [AWS ECR dashboard](https://console.aws.amazon.com/ecr/repositories) (set your region in the upper right corner). Make sure all of your Cortex clusters have been deleted before deleting any ECR images.
+You can delete your ECR images from the [AWS ECR dashboard](https://console.aws.amazon.com/ecr/repositories) \(set your region in the upper right corner\). Make sure all of your Cortex clusters have been deleted before deleting any ECR images.
+

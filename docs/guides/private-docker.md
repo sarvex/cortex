@@ -1,6 +1,6 @@
 # Private docker registry
 
-Until [#1459](https://github.com/cortexlabs/cortex/issues/1459) is addressed, you can use a private docker registry for your Predictor images by following this guide.
+Until [\#1459](https://github.com/cortexlabs/cortex/issues/1459) is addressed, you can use a private docker registry for your Predictor images by following this guide.
 
 ## Local
 
@@ -10,7 +10,7 @@ When running Cortex locally, you can use private Docker images by running `docke
 
 ### Step 1
 
-Install and configure kubectl ([instructions](kubectl.md)).
+Install and configure kubectl \([instructions](kubectl.md)\).
 
 ### Step 2
 
@@ -53,3 +53,4 @@ kubectl delete secret --namespace default registry-credentials
 kubectl patch serviceaccount default --namespace default \
   -p "{\"imagePullSecrets\": []}"
 ```
+
