@@ -41,6 +41,8 @@
     max_unavailable: <string | int>  # maximum number of replicas that can be unavailable during an update; can be an absolute number, e.g. 5, or a percentage of desired replicas, e.g. 10% (default: 25%)
 ```
 
+In order for you to be able to deploy an API, the above configuration must be paired with the configuration of one of the following predictor types: [Python Predictor](#python-predictor), [TensorFlow Predictor](#tensorflow-predictor), [ONNX Predictor](#onnx-predictor).
+
 ## Python Predictor
 
 <!-- CORTEX_VERSION_BRANCH_STABLE x3 -->
