@@ -225,8 +225,8 @@ workflows:
 
   build:
     jobs:
-      - test
-      - e2e-tests-aws
+      # - test
+      # - e2e-tests-aws
       - e2e-tests-gcp
       - build-and-deploy-approval:
           type: approval
